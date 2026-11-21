@@ -274,7 +274,10 @@ HELP = """commands:
   decode <base64|hex|rot13|binary> <text or file>
   caesar <shift|all> <text or file>      hash <md5|sha1|sha256> <text>
   crack <hash> <wordlist>                nmap <target>        login (when available)
-  hint (-25 pts)   submit <answer>   skip (0 pts)   score   quit"""
+  hint (-25 pts)   submit <answer>   skip (0 pts)   score   quit
+
+how to submit: find the flag, then type   submit FLAG{word_word_42}
+(use your own flag. Level 5 wants just a port number, e.g.  submit 2323)"""
 
 
 def play_level(n, lvl, total_so_far):
@@ -351,7 +354,7 @@ def play_level(n, lvl, total_so_far):
                 lvl.stats = dict(points=pts, secs=secs, hints=hints, wrong=wrong, skipped=False)
                 return pts
             wrong += 1
-            print(col("Wrong answer. (-5 points)", R))
+            print(col("Wrong answer. (-5 points)  Format: submit FLAG{...}  (copy it exactly)", R))
         else:
             print(f"{cmd}: command not found (type 'help')")
 
@@ -523,6 +526,10 @@ def main():
     say("Year 2031. The megacorp NULLCORP controls the city's data. You are a rookie agent of the Resistance.")
     say("Seven digital locks stand between you and the truth. Every puzzle is real hacking technique.")
     say("Everything here is a simulation. Nothing leaves this game.\n")
+    say("HOW TO WIN A LEVEL: every lock hides a FLAG that looks like  FLAG{word_word_42}.")
+    say("Find it, then type:  submit FLAG{word_word_42}   (copy yours exactly, braces included).")
+    say("A few levels ask for something else, like a port number. The objective always tells you.")
+    say("Stuck? 'hint' costs 25 points, 'help' lists commands.\n")
     try:
         name = a.name or input("Agent codename: ").strip() or "anon"
     except (EOFError, KeyboardInterrupt):
