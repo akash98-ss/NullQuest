@@ -111,14 +111,7 @@ nothing is written to disk.
 - How dictionary attacks work against unsalted hashes 🔑
 - Why building SQL by string concatenation is dangerous 💉
 - Sandboxing an exploit demo (authorizer, timeouts, in-memory DB) 🧰
-## 🗺️ Roadmap
- 
-- [ ] More levels: XSS, JWT forging, steganography, file carving
-- [ ] Timed "speedrun" mode
-- [ ] Online leaderboard
-- [ ] Colored hints per skill level
-- [ ] Level editor so friends can add puzzles
-## 📄 License
+
  
 MIT
  
